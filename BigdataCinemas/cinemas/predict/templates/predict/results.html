@@ -1,0 +1,27 @@
+
+{%extends "predict/base.html" %}
+
+{%block content %}
+<div class = "header">
+  <h2>Prediction results</h2>
+</div>
+<div class="row">
+      <a href ="{{result_file}}">Download as .csv file</a> &nbsp; &nbsp; &nbsp; &nbsp;<a href = "{% url 'predict:index' %}">Make another prediction</a>
+</div>
+
+    <br><br>
+      <table style="text-align: center;">
+      <tr>
+        <th>SUBS_KEY&nbsp;</th>
+        <th>Prediction</th>
+     </tr>
+
+      {% for key, value in data %}
+          <tr>
+              <td> {{ key }} </td> <td> {{ value }} </td>
+          </tr>
+      {% endfor %}
+      </table>
+
+
+{%endblock content %}

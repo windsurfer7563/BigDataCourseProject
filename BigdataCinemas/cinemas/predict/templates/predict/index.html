@@ -1,0 +1,17 @@
+
+{%extends "predict/base.html" %}
+
+{%block content %}
+
+  <h2>Please select the .csv file with user ids</h2>
+    <div class="jumbotron">
+      <form action = "{% url 'predict:make_prediction' %}" method = "post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <input class=" btn btn-sm form-control" id="id_csv_file" name="csv_file" type="file">
+      <p><p><button class="btn btn-primary btn-lg" type="submit" data-loading-text="Завантаження...">Завантажити</button>
+
+    </form>
+  </div>
+
+{%endblock content %}
